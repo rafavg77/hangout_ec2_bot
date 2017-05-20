@@ -1,0 +1,17 @@
+[Unit]
+Description=Hangout Bot in NodeJS for control EC2 instance
+
+Wants=network.target
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /home/pi/Developer/hangout_ec2_bot/app.js
+Restart=on-failure
+RestartSec=10                       # Restart service after 10 seconds if node service crashes
+StandardOutput=syslog               # Output to syslog
+StandardError=syslog                # Output to syslog
+SyslogIdentifier=hangout-ec2-bot
+User=pi
+
+[Install]
+WantedBy=multi-user.target
