@@ -1,5 +1,10 @@
-git clone 
+git clone <this url repo, dhuu>
+sudo cp hangout-bot-ec2.service /etc/systemd/system/hangout-bot-ec2.service
 
 sudo systemctl enable hangout-bot-ec2.service
 sudo systemctl daemon-reload
 sudo service hangout-bot-ec2.service start
+
+add this to crontab: 
+#Restart Hangout Bot
+10 */1 * * *  /usr/bin/sudo /bin/systemctl restart hangout-bot-ec2.service
