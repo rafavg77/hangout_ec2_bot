@@ -1,0 +1,5 @@
+git clone 
+
+sudo systemctl enable hangout-bot-ec2.service
+sudo systemctl daemon-reload
+sudo service hangout-bot-ec2.service start
